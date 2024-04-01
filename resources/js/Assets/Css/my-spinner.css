@@ -1,0 +1,163 @@
+.white-spinner {
+    -webkit-animation: white-spinner-turn 1s linear infinite;
+    animation: white-spinner-turn 1s linear infinite;
+}
+@-webkit-keyframes white-spinner-turn {
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+@keyframes white-spinner-turn {
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.white-spinner__value {
+    -webkit-animation: white-spinner-stroke 6s linear infinite;
+    animation: white-spinner-stroke 6s linear infinite;
+    fill: none;
+    stroke-dasharray: 63;
+    stroke-dashoffset: 63;
+    stroke-linecap: round;
+}
+.white-spinner__value:nth-child(1) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.white-spinner__value:nth-child(2) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(255, 255, 255, var(--tw-bg-opacity));
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.white-spinner__value:nth-child(3) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(255, 255, 255, var(--tw-bg-opacity));
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.white-spinner__value:nth-child(4) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(255, 255, 255, var(--tw-bg-opacity));
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+.white-spinner__value:nth-child(5) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(255, 255, 255, var(--tw-bg-opacity));
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+.white-spinner__value:nth-child(6) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(255, 255, 255, var(--tw-bg-opacity));
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+@-webkit-keyframes white-spinner-stroke {
+    8.3333333333% {
+        stroke-dashoffset: 0;
+    }
+    16.6666666667%,
+    100% {
+        stroke-dashoffset: 63;
+    }
+}
+@keyframes white-spinner-stroke {
+    8.3333333333% {
+        stroke-dashoffset: 0;
+    }
+    16.6666666667%,
+    100% {
+        stroke-dashoffset: 63;
+    }
+}
+
+.primary-spinner {
+    -webkit-animation: primary-spinner-turn 1s linear infinite;
+    animation: primary-spinner-turn 1s linear infinite;
+}
+@-webkit-keyframes primary-spinner-turn {
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+@keyframes primary-spinner-turn {
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.primary-spinner__value {
+    -webkit-animation: primary-spinner-stroke 6s linear infinite;
+    animation: primary-spinner-stroke 6s linear infinite;
+    fill: none;
+    stroke-dasharray: 63;
+    stroke-dashoffset: 63;
+    stroke-linecap: round;
+}
+.primary-spinner__value:nth-child(1) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(18, 73, 124, var(--tw-bg-opacity));
+}
+.primary-spinner__value:nth-child(2) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(18, 73, 124, var(--tw-bg-opacity));
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.primary-spinner__value:nth-child(3) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(18, 73, 124, var(--tw-bg-opacity));
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.primary-spinner__value:nth-child(4) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(18, 73, 124, var(--tw-bg-opacity));
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+.primary-spinner__value:nth-child(5) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(18, 73, 124, var(--tw-bg-opacity));
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+.primary-spinner__value:nth-child(6) {
+    --tw-bg-opacity: 1;
+    stroke: rgba(18, 73, 124, var(--tw-bg-opacity));
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+@-webkit-keyframes primary-spinner-stroke {
+    8.3333333333% {
+        stroke-dashoffset: 0;
+    }
+    16.6666666667%,
+    100% {
+        stroke-dashoffset: 63;
+    }
+}
+@keyframes primary-spinner-stroke {
+    8.3333333333% {
+        stroke-dashoffset: 0;
+    }
+    16.6666666667%,
+    100% {
+        stroke-dashoffset: 63;
+    }
+}

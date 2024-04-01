@@ -1,0 +1,41 @@
+.custom-table-header {
+    @apply font-semibold text-left text-gray-900 bg-white;
+    border-collapse: collapse;
+}
+
+.custom-table-header th {
+    @apply px-4 py-3;
+}
+
+.custom-table-body {
+    @apply shadow-inner bg-white;
+}
+
+.custom-table-body ul {
+    list-style-type: disc;
+}
+.custom-table-body button{
+    font-size: 10pt;
+}
+
+.custom-table-body tr td:first-child,
+.custom-table-body tr td:nth-child(2) {
+    vertical-align: top;
+}
+
+.custom-table-body tr td:nth-child(3) {
+    min-width: 200px;
+}
+
+.custom-table-body tr:nth-child(odd) {
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.profile-table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+.profile-table tr td:first-child {
+    @apply font-semibold text-sm;
+}
+

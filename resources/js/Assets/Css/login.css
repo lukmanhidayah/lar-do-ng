@@ -1,0 +1,58 @@
+.login-custom-container {
+    @apply py-10 md:py-0 flex relative justify-center items-center bg-blue-50 w-full min-h-screen;
+    background: linear-gradient(
+        52deg,
+        rgba(33, 54, 127, 1) 0%,
+        rgba(2, 152, 202, 1) 100%
+    );
+}
+
+.login-left-container {
+    @apply hidden md:block md:relative min-h-screen flex flex-col justify-center items-start p-12;
+    width: 100%;
+    background: linear-gradient(
+        52deg,
+        rgba(33, 54, 127, 1) 0%,
+        rgba(2, 152, 202, 1) 100%
+    );
+}
+
+.login-right-container {
+    @apply relative z-20 pb-10 pt-4 md:pt-10 rounded-lg md:rounded-none overflow-hidden h-2/3 md:min-h-screen bg-white flex flex-col justify-center items-center px-10 lg:px-20 shadow-lg overflow-hidden;
+    width: 90%;
+}
+
+.modal-container {
+    @apply hidden absolute top-0 left-0 w-full h-full bg-primary-900 bg-opacity-90 z-50 flex items-center justify-center overflow-hidden;
+}
+
+.error-message-container {
+    @apply my-6 w-full shadow rounded bg-white overflow-hidden grid;
+    grid-template-columns: 4rem 1fr 2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b4b4b4;
+    border-radius: 10px;
+}
+
+@screen md {
+    .login-custom-container {
+        background: unset;
+    }
+
+    .login-right-container {
+        width: 70%;
+    }
+}

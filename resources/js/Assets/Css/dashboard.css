@@ -1,0 +1,253 @@
+.dashboard-container {
+    @apply relative grid min-h-screen bg-blue-50;
+    grid-template-areas:
+        "header"
+        "content";
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 1fr;
+}
+
+.dashboard-sidebar-container {
+    @apply bg-primary-600 h-full flex justify-center z-20;
+    position: fixed;
+    width: 100%;
+}
+
+.dashboard-header-container {
+    @apply sticky top-0 bg-white p-2 shadow z-20;
+    grid-area: header;
+}
+
+.dashboard-content-container {
+    @apply relative p-6;
+    grid-area: content;
+    overflow: auto;
+}
+
+.dashboard-content {
+    max-width: 1195px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.min-h-content-table {
+    min-height: 612px;
+}
+
+.dashboard-district-container {
+    @apply p-4;
+    max-height: 500px;
+}
+
+.w-768 {
+    width: 768px;
+}
+
+.dashboard-sidebar-content {
+    @apply fixed min-h-screen;
+    width: 100%;
+}
+
+.dashboard-logo-container {
+    @apply flex justify-center items-center;
+    height: 120px;
+}
+.expandable-item-container {
+    @apply shadow-inner;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-nav-container li a,
+.dashboard-nav-container li div.expandable-container {
+    @apply w-full px-5 flex h-16 items-center text-gray-300 text-sm font-bold;
+}
+
+.dashboard-nav-container li a:hover,
+.dashboard-nav-container li div.expandable-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-nav-container li a .icon,
+.dashboard-nav-container li div.expandable-container .icon {
+    @apply mr-4;
+}
+.dashboard-nav-container li.expandable-item a .icon {
+    @apply hidden;
+}
+
+.dashboard-nav-container li a .arrow-icon,
+.dashboard-nav-container li div.expandable-container .arrow-icon {
+    @apply transform -rotate-90;
+}
+
+.dashboard-nav-container li a.active .arrow-icon,
+.dashboard-nav-container li div.expandable-container.active .arrow-icon {
+    @apply transform rotate-0;
+}
+
+.dashboard-nav-container li a.active {
+    @apply border-l-4 border-gray-50 text-gray-50;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.dashboard-nav-container li.expandable-item a {
+    @apply pl-14;
+}
+.dashboard-nav-container li.expandable-item a.active {
+    @apply border-l-0 border-gray-50 text-gray-50;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-nav-container li a.active .icon {
+    @apply -ml-1;
+}
+
+.summary-container {
+    display: grid;
+    /* grid-template: 100px 100px / repeat(6, minmax(210px, 1fr)); */
+    /* grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); */
+    /* grid-template-columns: repeat(5, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    grid-auto-flow: row;
+}
+
+.summary-container .item {
+    @apply bg-white select-none h-60 rounded-md shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.custom-tab-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: -1px !important;
+}
+
+.custom-tab {
+    @apply rounded-t-md px-4 md:px-10 py-3 border bg-blue-10 font-bold text-gray-500 select-none;
+    border-color: transparent;
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+}
+
+.custom-tab--selected {
+    @apply bg-white shadow-md text-primary-700 border-gray-200;
+    z-index: 3;
+}
+
+.custom-tab-panel {
+    @apply bg-white w-full overflow-hidden relative rounded-b-md rounded-r-md shadow;
+    display: none;
+    z-index: 4;
+    position: relative;
+    min-height: calc(100vh - 180px);
+}
+
+.custom-tab-panel--selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.button-verification-container {
+    bottom: 150%;
+    right: 0;
+}
+
+.button-verification-container::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+    clear: both;
+    z-index: 2;
+}
+.button-verification-container::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 100.5%;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid rgba(0, 0, 0, 0.06);
+    clear: both;
+    z-index: 1;
+}
+
+.h-datable {
+    min-height: 100px;
+}
+
+.rdt_TableRow {
+    border-bottom-color: transparent !important;
+}
+.RFS-StepperContainer {
+    padding: 24px 0 !important;
+}
+
+.aws-btn {
+    --organic-arrow-color: #12497c !important;
+    --control-bullet-color: #14528b !important;
+    --control-bullet-active-color: #10406d !important;
+    --control-button-width: 10% !important;
+    --control-button-height: 100% !important;
+    --control-button-background: transparent;
+    --loader-bar-color: #12497c !important;
+    --loader-bar-height: 6px !important;
+    --control-button-opacity: 0.8 !important;
+}
+
+.awssld__bullets {
+    bottom: 20px !important;
+}
+.awssld__bullets button {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 5px 15px !important;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.31) !important;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.31) !important;
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.31) !important;
+    opacity: 0.9 !important;
+}
+
+.awssld__controls__arrow-left:before,
+.awssld__controls__arrow-right:before,
+.awssld__controls__arrow-left:after,
+.awssld__controls__arrow-right:after {
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.31);
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.31);
+}
+
+@screen md {
+    .dashboard-container {
+        grid-template-areas:
+            "sidebar header"
+            "sidebar content";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 80px 1fr;
+    }
+
+    .dashboard-sidebar-container {
+        @apply bg-primary-600 h-full shadow z-20;
+        grid-area: sidebar;
+        position: relative;
+    }
+
+    .dashboard-sidebar-content {
+        width: 200px;
+    }
+}

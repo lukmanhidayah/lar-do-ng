@@ -1,0 +1,78 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+.font-roboto-slab{
+    font-family: 'Roboto Slab', serif;
+}
+
+body.modal-open{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.bg-gradient {
+    background: linear-gradient(
+        52deg,
+        rgba(33, 54, 127, 1) 0%,
+        rgba(2, 152, 202, 1) 100%
+    );
+}
+
+textarea {
+    resize: none !important;
+}
+
+#modal-root {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0;
+    width: 100%;
+}
+
+#modal-root.modal-open {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    opacity: 1;
+}
+
+#modal-root .modal-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.react-datepicker {
+    border: 1px solid #ccc !important;
+}
+
+.react-datepicker__header{
+    background-color: #eef6ff !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+    left: 50% !important;
+    transform: translate3d(-50%, 0px, 0px) !important;
+}
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle{
+    left: 50% !important;
+    transform: translate3d(-50%, 0px, 0px) !important;
+}

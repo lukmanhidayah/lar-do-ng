@@ -1,0 +1,16 @@
+.message-thumbnail{
+  width: 60px;
+  height: 60px;
+}
+
+.message-bar{
+  width: 100%;
+
+}
+
+@media (min-width: 768px) {
+  .message-bar{
+    width: calc(100% - 80px);
+  
+  }
+}

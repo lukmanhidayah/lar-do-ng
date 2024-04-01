@@ -1,0 +1,52 @@
+.tdy-body {
+    width: 100%;
+    min-width: 800px;
+}
+
+.tdy-container {
+    @apply shadow rounded p-14;
+    width: 780px;
+    min-width: 780px;
+    min-height: 100%;
+    background: url("@/Assets/Images/bg-full-tdy.png") white;
+    background-repeat: no-repeat;
+    background-size: 780px 100%;
+}
+
+.tdy-content {
+    @apply border-4 p-4;
+    border-radius: 2px 5px 5px 2px/5px 5px 5px 5px;
+    min-height: 100%;
+    background: url("@/Assets/Images/bg-tdy.png") white;
+    background-repeat: repeat;
+    background-size: 50px 40px;
+    border-color: #0222bf;
+}
+
+.tdy-header {
+    @apply flex flex-col items-center border-double border-b-4 border-black;
+    font-family: "Roboto Slab", serif;
+}
+
+.tdy-middle {
+    @apply py-4;
+}
+
+.middle-desc,
+.middle-footer {
+    @apply py-8;
+}
+.tdy-container td,
+.tdy-container td b {
+    @apply text-sm;
+    font-family: "Roboto Slab", serif;
+}
+
+.tdy-container tr > td {
+    padding-bottom: 10px;
+    vertical-align: top;
+}
+.tdy-container p{
+    @apply text-sm text-center;
+    font-family: "Roboto Slab", serif;
+}

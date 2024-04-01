@@ -1,0 +1,132 @@
+version: '3'
+    
+services:
+  site:
+    build:
+      context: ./dockerfiles
+      dockerfile: nginx.dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    container_name: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www/html:delegated
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - php
+      - mysql
+      - phpmyadmin
+    networks:
+      - laravel
+
+  php:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    ports:
+      - 9000:9000  
+    depends_on:
+      - mysql
+    volumes:
+      - storagedata:/var/www/html/storage/app
+      - .:/var/www/html
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - laravel
+
+  # redis:
+  #   image: redis:alpine
+  #   container_name: redis
+  #   restart: unless-stopped
+  #   ports:
+  #     - 6379:6379
+  #   networks:
+  #     - laravel
+
+  composer:
+    build:
+      context: ./dockerfiles
+      dockerfile: composer.dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    container_name: composer
+    volumes:
+      - .:/var/www/html
+      - /etc/localtime:/etc/localtime:ro
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    user: root
+    entrypoint: ['composer', '--ignore-platform-reqs']
+    networks:
+      - laravel
+
+  npm:
+    image: node:14.17-alpine
+    container_name: npm
+    volumes:
+      - .:/var/www/html
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 3002:3000
+      - 3003:3001
+    working_dir: /var/www/html
+    entrypoint: ['npm']
+    networks:
+      - laravel
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - laravel
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: pma
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8005:80
+    networks:
+      - laravel
+
+  # mailhog:
+  #   image: mailhog/mailhog:latest
+  #   container_name: mailhog
+  #   ports:
+  #     - 1025:1025
+  #     - 8025:8025
+  #   networks:
+  #     - laravel
+
+volumes:
+  dbdata:
+  storagedata:
+
+networks:
+  laravel:
